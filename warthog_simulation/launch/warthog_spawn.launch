@@ -29,7 +29,8 @@
     <arg name="enable_ekf"  value="$(arg ekf_localization)" />
   </include>
   <include file="$(find warthog_control)/launch/teleop.launch" />
-  
+  <rosparam command="load" file="$(find warthog_simulation)/params/ekf.yaml" />
+
   <!-- Spawn Warthog -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
 	      args="-urdf -model warthog -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
