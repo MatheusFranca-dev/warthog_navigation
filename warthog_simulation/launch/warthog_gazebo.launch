@@ -57,7 +57,8 @@
   </node>
 
   <!-- WORLD -->
-  <node pkg="tf" type="static_transform_publisher" name="world_broadcaster" args="0 0 0 0 0 0 /world /odom 100" />
+  <node pkg="tf" type="static_transform_publisher" name="world_broadcaster" args="0 0 0 0 0 0 /world /odom 100" 
+        if="$(eval config != 'gmapping')"/>
 
   <!-- RViz -->
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" 

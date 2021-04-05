@@ -19,4 +19,4 @@ robot_base_frame: base_link
 transform_tolerance: 0.1
 
 inflater_layer:
- inflation_radius: 0.9
+ inflation_radius: 0.7 # 0.9
