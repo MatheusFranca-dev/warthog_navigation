@@ -77,6 +77,7 @@ Check the config parameter (It's a rviz configuration):
  - navigation: For navigate without a map
  - gmapping: To create a map
  - localization: For navigate with a map
+ - rtabmap: For slam with realsense sensor
 
 **NAVIGATION WITHOUT A MAP**
 
@@ -97,6 +98,18 @@ This will create a mymap.yaml and mymap.pgm file in your current directory.
     $ roslaunch warthog_slam amcl.launch map_file:=/path/to/my/map.yaml
 
 ![banner](https://github.com/MatheusFranca-dev/warthog_navigation/blob/main/doc_resources/v1-warthog-navigation-2021-04-01.gif)
+
+**SLAM WITH RTABMAP**
+
+For create a map, use:
+
+    $ roslaunch warthog_slam warthog_rtabmap.launch localization:=false
+
+After create a map, you could kill the application and run:
+
+    $ roslaunch warthog_slam warthog_rtabmap.launch localization:=true
+
+![banner](https://github.com/MatheusFranca-dev/warthog_navigation/blob/main/doc_resources/v1_rtabmap.png)
 
 # **License**
 

@@ -1,7 +1,10 @@
 <launch>
 
   <!--- Run Move Base -->
-  <include file="$(find warthog_slam)/launch/move_base.launch" />
+  <include file="$(find warthog_slam)/launch/move_base.launch">
+    <param name="dwa_planner"  value="false" />
+  </include>
+  
 
   <!--- Gmapping -->
   <arg name="scan_topic" default="front/scan" />
